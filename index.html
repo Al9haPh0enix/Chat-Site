@@ -5,15 +5,65 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="index.css">
 
 	<title>Chat Client</title>
 
 </head>
 
+<style>
+	.fixedElement {
+		position: fixed;
+		top: 0;
+		z-index: 100;
+		width: 100%;
+	}
+
+	.text {
+		color: #d3d3d3;
+		font-size: 1em;
+	}
+
+	.fixedElementBottom {
+		position: fixed;
+		top: 95%;
+		z-index: 100;
+		width: 100%;
+	}
+
+	.inp {
+		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+		-webkit-text-stroke: black;
+		background-color: rgb(127, 127, 127);
+		border-color: black;
+		appearance: none;
+		border-radius: 5px;
+		border-width: 2px 2px 2px 2px;
+		outline: none;
+		transition: 150ms
+	}
+
+	.inp:focus {
+		border-color: blue;
+		color: blue;
+		border-width: 0px 0px 4px 0px;
+		transition: 150ms
+	}
+
+	.inp:focus::placeholder {
+		color: blue;
+		transition: 150ms;
+	}
+
+	.inp::placeholder {
+		color: rgb(80, 80, 80);
+		transition: 150ms;
+	}
+</style>
+
 <body style="background-color: black;">
 	<form autocomplete="off" class="fixedElementBottom" onsubmit="send();return false" style="text-align: center;">
-		<input class="inp" style="width: 500px;" type="text" name="To send" onsubmit="send()" id="inp" placeholder="Message">
+		<input class="inp" style="width: 500px;" type="text" name="To send" onsubmit="send()" id="inp"
+			placeholder="Message">
 	</form>
 
 	<form autocomplete="off" class="fixedElement" onsubmit="send_name();return false">
