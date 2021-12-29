@@ -1,13 +1,47 @@
 .fixedElement {
     position:fixed;
     top:0;
-    width:100%;
     z-index:100;
+    width: 100%;
+}
+
+.text {
+    color: #d3d3d3;
+    font-size: 1em;
 }
 
 .fixedElementBottom {
     position:fixed;
     top:95%;
-    width:100%;
     z-index:100;
+    width: 100%;
+}
+
+.inp {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-text-stroke: black;
+    background-color: rgb(127, 127, 127);
+    border-color: black;
+    appearance: none;
+    border-radius: 5px;
+    border-width: 2px 2px 2px 2px;
+    outline: none;
+    transition: 150ms
+}
+
+.inp:focus {
+    border-color: blue;
+    color: blue;
+    border-width: 0px 0px 4px 0px;
+    transition: 150ms
+}
+
+.inp:focus::placeholder {
+    color: blue;
+    transition: 150ms;
+}
+
+.inp::placeholder {
+    color: rgb(80, 80, 80);
+    transition: 150ms;
 }

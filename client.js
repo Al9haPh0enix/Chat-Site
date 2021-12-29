@@ -5,6 +5,7 @@ socket.onmessage = showData;
 
 opened = false;
 loaded = false;
+named = false
 
 var msg = ""
 
@@ -22,6 +23,12 @@ function openSocket() {
 	
 }
 
+var intervalID = window.setInterval(keepAlive, 50000/4);
+
+function keepAlive() {
+	socket.send("#IGNORE#");
+}
+
 /*
 showData(), below, will get called whenever there is new data
 from the server.
@@ -30,7 +37,7 @@ from the server.
 function showData(result) {
 	// when the server returns, show the result in the div:
 	msg = result.data;
-	if(loaded){
+	if(loaded && msg != "#IGNORE#"){
 		linebreak = document.createElement("br");
 		text.appendChild(linebreak);
 		text.innerHTML = text.innerHTML + msg;
@@ -45,6 +52,9 @@ function send(){
 }
 
 function send_name(){
-	socket.send(document.getElementById("name").value + " joined.");
+	if(!named){
+		socket.send(document.getElementById("name").value + " joined.");
+	}
+	named = true;
 	can_send = true;
 }
