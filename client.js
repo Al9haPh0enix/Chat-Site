@@ -38,9 +38,9 @@ function showData(result) {
 	// when the server returns, show the result in the div:
 	msg = result.data;
 	if(loaded && msg != "#IGNORE#"){
+		text.innerHTML = text.innerHTML + msg;
 		linebreak = document.createElement("br");
 		text.appendChild(linebreak);
-		text.innerHTML = text.innerHTML + msg;
 	}
 }
 
