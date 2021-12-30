@@ -1,3 +1,16 @@
+:root {
+    --col1: #4b3832;
+    --col2: #854442;
+    --col3: #d6a86b;
+    --col4: #3c2f2f;
+    --col5: #be9b7b;
+}
+
+body {
+    background-color: var(--col2);
+    font-family: 'Poppins', sans-serif;
+}
+
 .fixedElement {
     position:fixed;
     top:0;
@@ -6,7 +19,7 @@
 }
 
 .text {
-    color: #d3d3d3;
+    color: var(--col3);
     font-size: 1em;
 }
 
@@ -14,30 +27,27 @@
     position:fixed;
     top:95%;
     z-index:100;
-    width: 100%;
 }
 
 .inp {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    -webkit-text-stroke: black;
-    background-color: rgb(127, 127, 127);
-    border-color: black;
+    margin: 10px;
+    background-color: var(--col5);
+    border-color: var(--col1);
     appearance: none;
     border-radius: 5px;
-    border-width: 2px 2px 2px 2px;
+    border-width: 0px;
     outline: none;
     transition: 150ms
 }
 
 .inp:focus {
-    border-color: blue;
-    color: blue;
+    color: var(--col1);
     border-width: 0px 0px 4px 0px;
     transition: 150ms
 }
 
 .inp:focus::placeholder {
-    color: blue;
+    color: var(--col1);
     transition: 150ms;
 }
 

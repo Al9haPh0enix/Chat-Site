@@ -5,74 +5,28 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="index.css">
 
 	<title>Chat Client</title>
 
 </head>
 
-<style>
-	.fixedElement {
-		position: fixed;
-		top: 0;
-		z-index: 100;
-		width: 100%;
-	}
+<body>
+	<div class="fixedElementBottom">
+		<form autocomplete="off" class="fixedElementBottom" onsubmit="send();return false" style="text-align: center; width: 100%;">
+			<input class="inp" style="width: 500px;" type="text" name="To send" onsubmit="send()" id="inp" placeholder="Message">
+		</form>
 
-	.text {
-		color: #d3d3d3;
-		font-size: 1em;
-	}
-
-	.fixedElementBottom {
-		position: fixed;
-		top: 95%;
-		z-index: 100;
-		width: 100%;
-	}
-
-	.inp {
-		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-		-webkit-text-stroke: black;
-		background-color: rgb(127, 127, 127);
-		border-color: black;
-		appearance: none;
-		border-radius: 5px;
-		border-width: 2px 2px 2px 2px;
-		outline: none;
-		transition: 150ms
-	}
-
-	.inp:focus {
-		border-color: blue;
-		color: blue;
-		border-width: 0px 0px 4px 0px;
-		transition: 150ms
-	}
-
-	.inp:focus::placeholder {
-		color: blue;
-		transition: 150ms;
-	}
-
-	.inp::placeholder {
-		color: rgb(80, 80, 80);
-		transition: 150ms;
-	}
-</style>
-
-<body style="background-color: black;">
-	<form autocomplete="off" class="fixedElementBottom" onsubmit="send();return false" style="text-align: center;">
-		<input class="inp" style="width: 500px;" type="text" name="To send" onsubmit="send()" id="inp"
-			placeholder="Message">
-	</form>
-
-	<form autocomplete="off" class="fixedElement" onsubmit="send_name();return false">
-		<input style="width: 250px;" class="inp" type="text" name="Name" id="name" placeholder="Username">
-	</form>
+		<form autocomplete="off" class="fixedElementBottom" onsubmit="send_name();return false">
+			<input style="width: 250px;" class="inp" type="text" name="Name" id="name" placeholder="Username">
+		</form>
+	</div>
 
 	<div style="width: 100%;">
 		<div style="width: fit-content;">
-			<br>
 			<div class="text" id="sensor-reading"></div>
 		</div>
 	</div>
